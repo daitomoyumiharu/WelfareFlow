@@ -1,26 +1,32 @@
-<h2>Log in</h2>
+<%= stylesheet_link_tag 'login_styles' %>
+<div class="container-center">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <%= form_with model: @user, url: user_session_path, class: "registration-main", local: true do |f| %>
+    <div class='card text-center'>
+      <div class='form-header'>
+        <h1 class='--bs-primary'>
+          会員情報入力
+        </h1>
+      </div>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text" for="email">メールアドレス</label>
+        </div>
+        <%= f.email_field :email, class: "input-field", id: "email", placeholder: "PC・携帯どちらでも可", autofocus: true %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text" for="password">パスワード</label>
+        </div>
+        <%= f.password_field :password, class: "input-field", id: "password" %>
+      </div>
+      <div class='login-btn'>
+        <%= f.submit "ログイン", class: "login-red-btn" %>
+      </div>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
