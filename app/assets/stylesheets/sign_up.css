@@ -1,0 +1,114 @@
+/* 全体的なフォームのラッピング要素のスタイル */
+.registration-main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-header-text {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ラベルと必須マーク */
+.form-text-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: .5rem;
+}
+
+.form-text {
+  font-weight: bold;
+  color: #333;
+}
+
+.indispensable {
+  background: #c12e2a;
+  color: white;
+  padding: .2rem .6rem;
+  border-radius: 2px;
+  font-size: .75rem;
+}
+
+/* 入力フィールド */
+.input-default {
+  width: 100%;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.input-default:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+/* 名前の入力フィールド */
+.input-name-wrap {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-name {
+  flex: 1;
+}
+
+/* 生年月日のセレクトボックス */
+.select-birth {
+  width: 100%;
+  padding: .65rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: white;
+  margin-bottom: 1rem;
+}
+
+/* フォーム内のボタン */
+.register-red-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #c12e2a;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.register-red-btn:hover {
+  background-color: #a50e0e;
+}
+
+/* 補足情報のテキスト */
+.info-text {
+  font-size: .85rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.form-info-header, .form-info-text {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .registration-main {
+    padding: 1rem;
+  }
+
+  .input-name-wrap {
+    flex-direction: column;
+  }
+}
